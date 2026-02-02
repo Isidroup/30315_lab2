@@ -96,7 +96,7 @@ display <= '0' when ss_tb = "0000001" else
            '4' when ss_tb = "1001100" else
            '5' when ss_tb = "0100100" else
            '6' when ss_tb = "0100000" else
-           '7' when ss_tb = "0001111" else
+           '7' when ss_tb = "0001101" else
            '8' when ss_tb = "0000000" else
            '9' when ss_tb = "0000100" else
            '-' when ss_tb = "1111110" else
