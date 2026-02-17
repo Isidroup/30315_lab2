@@ -15,13 +15,13 @@ set_property target_language VHDL [current_project]
 set_property simulator_language VHDL [current_project]
 
 # 3. Añadir fuentes de diseño, situadas en la carpeta rtl
-add_files [file normalize "$project_dir/../rtl"]
+add_files [list "../rtl"]
 
 # 4. Añadir archivos de testbench, situados en la carpeta sim
-add_files -fileset sim_1 [file normalize "$project_dir/../sim"]
+add_files -fileset sim_1 [list "../sim"]
 
 # 5. Añadir archivos de restricciones, situados en la carpeta constraints
-add_files -fileset constrs_1 [file normalize "$project_dir/../constraints"]
+add_files -fileset constrs_1 [list "../constraints"]
 
 # 5.1 EL fichero de localizaciones no se usa en síntesis
-set_property used_in_synthesis false [get_files  "$script_dir/../constraints/02_basys3_io.xdc"]
+set_property used_in_synthesis false [get_files [list "../constraints/02_basys3_io.xdc"]]
