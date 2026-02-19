@@ -78,7 +78,7 @@ architecture RTL of doubledabble12b is
   signal c10, c11, c12, c13, c14, c15, c16 : unsigned(3 downto 0);
   signal c20, c21, c22, c23 : unsigned(3 downto 0);
 
-  -- LUT para implementar la funci�n IF>4THEN+3
+  -- LUT para implementar la funci?n IF>4THEN+3
   type lut is array (0 to 15) of unsigned(3 downto 0);
   constant ifgt4_add3 : lut := (
   "0000", "0001", "0010", "0011", "0100",        --  0 ..  4 salida = entrada
@@ -115,3 +115,4 @@ begin
   BCD <= std_logic_vector('0' & c21(3) & c22(3) & c23 & c16 & c9 & BIN(0));
 
 end architecture;
+

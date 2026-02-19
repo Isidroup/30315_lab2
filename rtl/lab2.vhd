@@ -1,14 +1,14 @@
 -- ==============================================================
 --  Lab 2 - VHDL Template
---  DescripciÃ³n: Esqueleto de la entidad y arquitectura.
---  TODO: Completar descripciÃ³n funcional del diseÃ±o.
+--  Descripción: Esqueleto de la entidad y arquitectura.
+--  TODO: Completar descripción funcional del diseño.
 -- ==============================================================
 
--- TODO: AÃ±adir librerÃ­as necesarias.
+-- TODO: Añadir librerías necesarias.
 
 entity lab2 is
     port (
-        -- TODO: AÃ±adir puertos de entrada/salida (seÃ±ales, tipos, anchos).
+        -- TODO: Añadir puertos de entrada/salida (señales, tipos, anchos).
 
     );
 end entity lab2;
@@ -19,7 +19,7 @@ architecture RTL of lab2 is
     --  Declaraciones internas
     -- ==========================================================
     -- TODO: Declarar componentes .
-    -- TODO: Declarar seÃ±ales internas.
+    -- TODO: Declarar señales internas.
     -- TODO: Declarar constantes y tipos.
 
 begin
@@ -27,11 +27,12 @@ begin
     -- ==========================================================
     --  Instancias
     -- ==========================================================
-    -- TODO: Instanciar submÃ³dulos/componentes.
+    -- TODO: Instanciar submódulos/componentes.
 
     -- ==========================================================
-    --  LÃ³gica combinacional
+    --  Lógica combinacional
     -- ==========================================================
     -- TODO: Implementar el modelo con bloques combinacionales.
 
 end architecture;
+

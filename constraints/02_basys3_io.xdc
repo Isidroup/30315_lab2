@@ -1,41 +1,42 @@
 # --------------------------------------------------------------------------------
 # Archivo: 02_basys3_io.xdc
-# Descripci√≥n: Asignaci√≥n de pines y configuraci√≥n de voltaje para Basys3
+# DescripciÛn: AsignaciÛn de pines y configuraciÛn de voltaje para Basys3
 # --------------------------------------------------------------------------------
 
 ## Switches (Entradas A y B)
 set_property PACKAGE_PIN V17 [get_ports {A[0]}]; # sw0
-##    >>TODO: Completar la asignaci√≥n de pines para los dem√°s switches A[1]..A[5], B[0]..B[5]
+##    >>TODO: Completar la asignaciÛn de pines para los dem·s switches A[1]..A[5], B[0]..B[5]
 
 ## Buttons (Selectores display)
 set_property PACKAGE_PIN T17  [get_ports {SEL[0]}]; # btnR
-##    >>TODO: Completar la asignaci√≥n de pines para los dem√°s botones SEL[1]..SEL[2]
+##    >>TODO: Completar la asignaciÛn de pines para los dem·s botones SEL[1]..SEL[2]
 
 ##7 Segment Display Outputs (Salidas SS, AN)
 set_property PACKAGE_PIN W7    [get_ports {SS[6]}];
-##    >>TODO: Completar la asignaci√≥n de pines para las dem√°s salidas SS[0]..SS[5] y AN[0]..AN[3]
+##    >>TODO: Completar la asignaciÛn de pines para las dem·s salidas SS[0]..SS[5] y AN[0]..AN[3]
 
 
 
 
 # --------------------------------------------------------------------------
-# Configuraci√≥n El√©ctrica y de Dispositivo
+# ConfiguraciÛn ElÈctrica y de Dispositivo
 # --------------------------------------------------------------------------
 
-# Est√°ndar I/O: Aplicamos LVCMOS33 a todos los puertos
-# Configuraci√≥n para Entradas (Switches y Botones)
+# Est·ndar I/O: Aplicamos LVCMOS33 a todos los puertos
+# ConfiguraciÛn para Entradas (Switches y Botones)
 set_property IOSTANDARD LVCMOS33 [get_ports {A[*] B[*] SEL[*]}]
-# Configuraci√≥n para Salidas (LEDs)
+# ConfiguraciÛn para Salidas (LEDs)
 set_property IOSTANDARD LVCMOS33 [get_ports {SS[*] AN[*]}]
 
-# Configuraci√≥n de compresi√≥n de Bitstream y Voltaje de Bancos
+# ConfiguraciÛn de compresiÛn de Bitstream y Voltaje de Bancos
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 
 # --------------------------------------------------------------------------
-# NOTA SOBRE LA ASIGNACI√ìN DE PINES:
-# La asignaci√≥n de pines y la configuraci√≥n el√©ctrica aqu√≠ definidas
-# est√°n espec√≠ficamente adaptadas para la placa Basys3. Al utilizar
+# NOTA SOBRE LA ASIGNACI”N DE PINES:
+# La asignaciÛn de pines y la configuraciÛn elÈctrica aquÌ definidas
+# est·n especÌficamente adaptadas para la placa Basys3. Al utilizar
 # una FPGA diferente o una placa distinta, es necesario consultar la
-# documentaci√≥n del fabricante para asegurar una asignaci√≥n correcta
-# de pines y una configuraci√≥n adecuada de los est√°ndares el√©ctricos.
+# documentaciÛn del fabricante para asegurar una asignaciÛn correcta
+# de pines y una configuraciÛn adecuada de los est·ndares elÈctricos.
+

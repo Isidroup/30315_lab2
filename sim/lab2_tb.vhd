@@ -13,7 +13,7 @@ signal sel_tb : std_logic_vector(3 downto 0);
 signal ss_tb : std_logic_vector(6 downto 0);
 signal an_tb : std_logic_vector(3 downto 0);
 
-signal display: character; -- NÃºmero mostrado en el display
+signal display: character; -- Número mostrado en el display
 
 component lab2
     port (
@@ -26,7 +26,7 @@ component lab2
 end component;
 
 begin
--- Instanciar el mÃ³dulo bajo prueba
+-- Instanciar el módulo bajo prueba
 uut: lab2
     port map (
         A => std_logic_vector(a_tb),
@@ -39,55 +39,55 @@ uut: lab2
 -- Proceso de Prueba
 process
 begin
-    -- Verificar en todos los tests que las seÃ±ales internas `producto`,
+    -- Verificar en todos los tests que las señales internas `producto`,
     --    `abs_prod`, `mill_sgn`, `bcd `,  `bcd_digito` y `SS` se calculan y
     --    se propagan correctamente.`
-    -- T1 Verificar los  casos en los que la salida SS toma los nÃºmeros del 0 al 9.
+    -- T1 Verificar los  casos en los que la salida SS toma los números del 0 al 9.
     --     ponemos A=1, B=0..9, y seleccionamos las unidades.
-    sel_tb <= "0001";             -- SelecciÃ³n dÃ­gito unidades
+    sel_tb <= "0001";             -- Selección dígito unidades
     a_tb <= to_signed(1,6);       -- Fijar A=1
     for i in 0 to 9  loop
         b_tb <= to_signed(i,6);   -- B=0..9
         wait for 10 ns;           -- Esperar a que se propague
     end loop;
     wait for 0 ns;
-    -- >>> Pon un breakpoint en la lÃ­nea anterior y Comprueba T1
+    -- >>> Pon un breakpoint en la línea anterior y Comprueba T1
 
     -- T2 Verificar que la salida SS representa de forma correcta el signo `-`
     b_tb <= to_signed(-9,6);  -- Fijar B=-9
-    sel_tb <= "1000";         -- SelecciÃ³n dÃ­gito signo
+    sel_tb <= "1000";         -- Selección dígito signo
     wait for 10 ns;           -- Esperar a que se propague
     wait for 0 ns;
-    -- >>> Pon un breakpoint en la lÃ­nea anterior y Comprueba T2
+    -- >>> Pon un breakpoint en la línea anterior y Comprueba T2
 
-    -- T3: Valores LÃ­mite. Comprobar que los productos: 31*31, -32*31, 31*-32 y -32*-32
+    -- T3: Valores Límite. Comprobar que los productos: 31*31, -32*31, 31*-32 y -32*-32
     --   se representan correctamente en BCD y en 7 segmentos.
     --- T3.1: 31*31 = 961
     a_tb <= to_signed(31,6);  -- Fijar A=31
     b_tb <= to_signed(31,6);  -- Fijar B=31
-    sel_tb <= "1000";         -- SelecciÃ³n dÃ­gito signo/millares
+    sel_tb <= "1000";         -- Selección dígito signo/millares
     wait for 10 ns;           -- Esperar a que se propague
-    sel_tb <= "0100";         -- SelecciÃ³n dÃ­gito signo/millares
+    sel_tb <= "0100";         -- Selección dígito signo/millares
     wait for 10 ns;           -- Esperar a que se propague
-    sel_tb <= "0010";         -- SelecciÃ³n dÃ­gito signo/millares
+    sel_tb <= "0010";         -- Selección dígito signo/millares
     wait for 10 ns;           -- Esperar a que se propague
-    sel_tb <= "0001";         -- SelecciÃ³n dÃ­gito signo/millares
+    sel_tb <= "0001";         -- Selección dígito signo/millares
     wait for 10 ns;           -- Esperar a que se propague
     wait for 0 ns;
-    -- >>> Pon un breakpoint en la lÃ­nea anterior y Comprueba T3.1
+    -- >>> Pon un breakpoint en la línea anterior y Comprueba T3.1
 
-    -- Escribe el cÃ³digo paro los otros tres tests:
+    -- Escribe el código paro los otros tres tests:
     -- T3.2: -32*31 = -992
     -- T3.3: 31*-32 = -992
     -- T3.4: -32*-32 = 1024
 
-    -- T4: AÃ±ade otros test que consideres necesarios para verificar el correcto
-    --     funcionamiento del diseÃ±o.
+    -- T4: Añade otros test que consideres necesarios para verificar el correcto
+    --     funcionamiento del diseño.
 
     wait;
 end process;
 
--- NÃºmero mostrado en el display en funciÃ³n del valor de ss_tb
+-- Número mostrado en el display en función del valor de ss_tb
                          -- abcdefg
 display <= '0' when ss_tb = "0000001" else
            '1' when ss_tb = "1001111" else
@@ -104,3 +104,4 @@ display <= '0' when ss_tb = "0000001" else
            '?';
 
 end architecture Behavioral;
+
